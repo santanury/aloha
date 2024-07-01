@@ -110,8 +110,6 @@ const styles = StyleSheet.create({
       bottom: 0,
       left: 0,
       right: 0,
-      borderTopRightRadius: normalize(20),
-      borderTopLeftRadius: normalize(20),
       backgroundColor: COLORS.white,
     },
   },

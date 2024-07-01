@@ -16,6 +16,7 @@ import Header from '../components/Header';
 import HighlightCard from '../components/HighlightCard';
 import CategoryCard from '../components/CategoryCard';
 import GuideCard from '../components/GuideCard';
+import BookButton from '../components/BookButton';
 
 const Home = ({navigation, route}) => {
   const HIGHLIGHTS = [
@@ -51,7 +52,7 @@ const Home = ({navigation, route}) => {
     <SafeAreaView style={{flex: 1}}>
       <ScrollView
         style={{flex: 1}}
-        contentContainerStyle={{paddingBottom: normalize(70)}}
+        contentContainerStyle={{}}
         showsVerticalScrollIndicator={false}>
         <Header />
 
@@ -101,11 +102,11 @@ const Home = ({navigation, route}) => {
             <Text style={[styles.sectionHead, {marginTop: SIZES.paddingLg}]}>
               Travel Guide
             </Text>
-
             <GuideCard />
           </>
         </View>
       </ScrollView>
+      <BookButton />
     </SafeAreaView>
   );
 };
@@ -146,5 +147,6 @@ const styles = StyleSheet.create({
     width: SIZES.width,
     backgroundColor: COLORS.primary + 10,
     paddingVertical: SIZES.paddingHuge,
+    paddingBottom: normalize(145),
   },
 });
