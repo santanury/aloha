@@ -40,11 +40,11 @@ export default HighlightCard;
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: COLORS.white,
     width: SIZES.width * 0.85,
     flex: 1,
     marginRight: SIZES.paddingSm,
     borderRadius: normalize(10),
-    overflow: 'hidden',
     shadowColor: COLORS.primary,
     shadowOffset: {
       width: 0,
@@ -52,15 +52,18 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.1,
     shadowRadius: 10,
+    elevation: 5,
+    marginBottom: SIZES.paddingHuge,
   },
   banner: {
     width: '100%',
     height: SIZES.height * 0.22,
     resizeMode: 'cover',
+    borderTopLeftRadius: normalize(10),
+    borderTopRightRadius: normalize(10),
   },
   low: {
     padding: SIZES.paddingMd,
-    backgroundColor: COLORS.white,
   },
   heading: {
     fontSize: normalize(24),

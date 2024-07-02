@@ -49,13 +49,9 @@ const Home = ({navigation, route}) => {
   ];
 
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <ScrollView
-        style={{flex: 1}}
-        contentContainerStyle={{}}
-        showsVerticalScrollIndicator={false}>
-        <Header />
-
+    <SafeAreaView style={styles.container}>
+      <Header />
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         {/* HOARDING */}
 
         <ImageBackground
@@ -76,9 +72,9 @@ const Home = ({navigation, route}) => {
           <FlatList
             data={HIGHLIGHTS}
             keyExtractor={(item, index) => index.toString()}
-            renderItem={({item, index}) =>
-              HighlightCard({...item, index, navigation})
-            }
+            renderItem={({item, index}) => (
+              <HighlightCard {...{...item, index, navigation}} />
+            )}
             horizontal
             showsHorizontalScrollIndicator={false}
             style={styles.highList}
@@ -116,8 +112,7 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: COLORS.white,
   },
   hoarding: {
     width: SIZES.width,
@@ -141,12 +136,11 @@ const styles = StyleSheet.create({
   },
   highList: {
     width: SIZES.width,
-    marginBottom: SIZES.paddingHuge,
   },
   low: {
     width: SIZES.width,
     backgroundColor: COLORS.primary + 10,
     paddingVertical: SIZES.paddingHuge,
-    paddingBottom: normalize(145),
+    paddingBottom: normalize(140),
   },
 });

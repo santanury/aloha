@@ -1,6 +1,6 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {SIZES, images} from '../constants';
+import {COLORS, SIZES, images} from '../constants';
 import normalize from '../utils/helpers/normalize';
 
 const Header = props => {
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: normalize(15),
+    backgroundColor: COLORS.white,
   },
   headerImg: {
     width: SIZES.width * 0.6,
